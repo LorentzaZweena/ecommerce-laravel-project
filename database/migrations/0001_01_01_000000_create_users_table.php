@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            // ini adalah kolom untuk menyimpan tipe user
+            // ADM untuk Admin, USR untuk Customer
+            $table->string('utype')->default('USR')->comment('ADM for Admin and USR for Customer');
             $table->rememberToken();
             $table->timestamps();
         });
