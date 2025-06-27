@@ -158,6 +158,19 @@
                                         <div class="text">Settings</div>
                                     </a>
                                 </li>
+
+                                <li class="menu-item">
+                                    <form method="POST" action="{{ route('logout') }}" id="logout-form">
+                                        {{-- @csrf : untuk mengamankan form, jadi tidak bisa di hack >:) --}}
+                                        @csrf
+                                        {{-- onclick="event.preventDefault();" : agar saat klik logout, tidak reload page lagi --}}
+                                        {{--  submit() : untuk mengirim form --}}
+                                    <a href="{{ route('logout') }}" class="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                        <div class="icon"><i class="icon-settings"></i></div>
+                                        <div class="text">Logout</div>
+                                    </a>
+                                    </form>
+                                </li>
                             </ul>
                         </div>
                     </div>
