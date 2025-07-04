@@ -22,4 +22,7 @@ Route::middleware(['auth', AuthAdmin::class])->group(function (){
     // ini untuk halaman admin
     // jika user sudah login sebagai admin, maka akan diarahkan ke halaman admin
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+    // ini untuk halaman daftar brand
+    Route::get('/admin/brands', [AdminController::class, 'brands'])->name('admin.brands');
 });
